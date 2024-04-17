@@ -15,6 +15,19 @@ def is_prime(num):
             return False
         i += 6
     return True
+
+def get_random_prime(bit_length):
+    """Generates a random prime number of a specified bit length."""
+    while True:
+        # Generate a random number within the desired bit length
+        num = random.getrandbits(bit_length)
+        # Make sure the number is odd and has the desired bit length
+        num |= 1  # Ensure the number is odd
+        num |= (1 << (bit_length - 1))  # Ensure the number has the correct bit length
+        
+        # Check if the number is prime
+        if is_prime(num):
+            return num
 p=5
 q=9
 e=2
