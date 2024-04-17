@@ -38,17 +38,52 @@ def extended_gcd(a, b):
         y = x1
         return gcd, x, y
 
-p=5
-q=9
-e=2
-n=p*q
-eul=(p-1)*(q-1)
+def rsa_key_generation(bit_length=16):
+    """Generates RSA public and private keys."""
+    # Generate prime numbers p and q
+    p = get_random_prime(bit_length)
+    q = get_random_prime(bit_length)
+    
+    # Compute n and euler's totient function (eul)
+    n = p * q
+    eul = (p - 1) * (q - 1)
+    
+    # Choose a public exponent e
+    e = 65537  # Common choice for e
+    
+    # Ensure e is coprime to eul
+    gcd, x, y = extended_gcd(e, eul)
+    
+    while gcd != 1:
+        e = random.randint(2, eul - 1)
+        gcd, x, y = extended_gcd(e, eul)
+    
+    # Calculate the private exponent d
+    d = x % eul
+    if d < 0:
+        d += eul
+    
+    # Return public and private keys
+    public_key = (n, e)
+    private_key = (n, d)
+    return public_key, private_key
 
-d= pow(e,-1,eul)
-pub_key= {n,e}
-pri_key= {n,d}
-print("public key:" ,pub_key, "\n private key:", pri_key)
-m=14
-c=pow(m,e,n)
-M=pow(c,d,n)
-print("\n encrypt:",c, "\n decrypt:", M)
+# Generate RSA keys
+public_key, private_key = rsa_key_generation(bit_length=16)
+print("Public key:", public_key)
+print("Private key:", private_key)
+
+# Test encryption and decryption
+m = 11  # Message to be encrypted
+n, e = public_key
+n, d = private_key
+
+# Encrypt the message
+c = pow(m, e, n)
+
+# Decrypt the message
+M = pow(c, d, n)
+
+print("\nEncrypted message:", c)
+print("Decrypted message:", M)
+
