@@ -28,20 +28,22 @@ def get_random_prime(bit_length):
         # Check if the number is prime
         if is_prime(num):
             return num
+def extended_gcd(a, b):
+    """Extended Euclidean algorithm to find the gcd of a and b and coefficients x and y."""
+    if a == 0:
+        return b, 0, 1
+    else:
+        gcd, x1, y1 = extended_gcd(b % a, a)
+        x = y1 - (b // a) * x1
+        y = x1
+        return gcd, x, y
+
 p=5
 q=9
 e=2
 n=p*q
 eul=(p-1)*(q-1)
-def gcd(a,b):
-    while b!=0:
-        a,b=b,a%b
-        return a
-    while e<eul:
-        if gcd(e,eul)== 1:
-            break
-        else:
-            e+=1
+
 d= pow(e,-1,eul)
 pub_key= {n,e}
 pri_key= {n,d}
