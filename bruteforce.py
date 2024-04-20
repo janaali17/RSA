@@ -37,3 +37,8 @@ e = int(input("please enter e "))
 encrypt = int(input("please enter a text to encrypt")) 
 decrypt = int(input("please enter a text to decrypt"))
 # bits = int(input("how many bits do u want 8-bits or 16-bits"))
+
+seconds_lenghth = time.time()
+
+totient = (p-1)*(q-1)
+xs
