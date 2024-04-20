@@ -41,4 +41,4 @@ decrypt = int(input("please enter a text to decrypt"))
 seconds_lenghth = time.time()
 
 totient = (p-1)*(q-1)
-xs
+def bruteforce(e,totient,encrypted,decrypt)
