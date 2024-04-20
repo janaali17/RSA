@@ -1,7 +1,7 @@
 import math
 import random
 
-x= int(input("would you like 8-bits or 16-bits output "))
+x= int(input("what would you like your input length to be? 8-bits or 16-bits "))
 message= int(input("please enter a message to encrypt "))
 def is_prime(num):
     """Checks if a number is prime using trial division."""
@@ -68,6 +68,8 @@ def rsa_key_generation(bit_length=16):
     # Return public and private keys
     public_key = (n, e)
     private_key = (n, d)
+    print(p)
+    print(q)
     return public_key, private_key
 
 # Generate RSA keys

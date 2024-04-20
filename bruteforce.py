@@ -51,3 +51,6 @@ def bruteforce(e,totient,encrypt,decrypt):
 
 bruteforce2 = bruteforce(e,totient,encrypt,decrypt)
 print("the private key is ", bruteforce2)
+
+final_time = time.time() - seconds_length
+print(f"The time taken: {final_tme:.15f} seconds")
