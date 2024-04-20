@@ -1,7 +1,7 @@
 import math # so that python can understand any mathmatical equation
 import random # for generating random integrs
-import time # 
-import Program1
+import time # figures out time taken to excute the code
+import Program1 # 
 
 
 def is_prime(num):
