@@ -5,24 +5,24 @@ x = int(input("\nwhat would you like your input length to be? 8-bits or 16-bits 
 # takes input from the user that asks for the length in bits
 message= int(input("please enter a number to encrypt "))
 # asks the user to enter a number encrypt 
-def is_prime(num): #
-    """Checks if a number is prime using trial division."""
-    if num <= 1:
-        return False
-    if num <= 3:
-        return True
-    if num % 2 == 0 or num % 3 == 0:
-        return False
-    i = 5
+def is_prime(num): #creating a function named "is_prime" to checks if a number is prime using trial division
+    if num <= 1: # creating a conditional statement that checks if the num is less than or equal to 1
+        return False # if the above condition is true then return false
+    if num <= 3: #creating a conditional statement that checks if the num is less than or equal to 3
+        return True #if the above condition is true then return true 
+    if num % 2 == 0 or num % 3 == 0: 
+    #creating a conditional statement that checks if num modulus 2 is equal to 0 or num modulus 3 is equal to 0 
+        return False #if the above condition is true then return false
+    i = 5 
     while i * i <= num:
         if num % i == 0 or num % (i + 2) == 0:
             return False
         i += 6
     return True
 
-def get_random_prime(x):
-    """Generates a random prime number of a specified bit length."""
-    while True:
+def get_random_prime(x): #creating a function named "get_random_prime" to generates a random prime number of a specified bit length
+
+    while True: #
         # Generate a random number within the desired bit length
         num = random.getrandbits(x)
         # Make sure the number is odd and has the desired bit length
