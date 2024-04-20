@@ -76,6 +76,9 @@ def rsa_key_generation(x):
     private_key = (n, d)
     print("p: " , p)
     print("q: " , q)
+    print("n: ", n)
+    print("e: ", e)
+    print("d: ", d)
     return public_key, private_key
 
 # Generate RSA keys
