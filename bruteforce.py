@@ -32,8 +32,8 @@ def get_random_prime(bit_length):
         if is_prime(num):
             return num
         
-encrypt = int(input("please enter a text to encrypt "))
-decrypt = int(input("please enter a text to decrypt "))
+encrypt = int(input("please enter the encrypted text"))
+decrypt = int(input("please enter the decrypted text "))
 p = int(input("please enter p "))
 q = int(input("please enter q "))
 n = int(input("please enter n "))
