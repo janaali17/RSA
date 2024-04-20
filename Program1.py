@@ -1,6 +1,7 @@
 import math
 import random
 
+x= int(input("would you like 8-bits or 16-bits output"))
 def is_prime(num):
     """Checks if a number is prime using trial division."""
     if num <= 1:
