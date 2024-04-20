@@ -1,9 +1,11 @@
-import math
-import random
+import math # so that python can understand any mathmatical equation
+import random # for generating random integrs
 
-x = int(input("\nwhat would you like your input length to be? 8-bits or 16-bits "))
-message= int(input("please enter a message to encrypt "))
-def is_prime(num):
+x = int(input("\nwhat would you like your input length to be? 8-bits or 16-bits ")) 
+# takes input from the user that asks for the length in bits
+message= int(input("please enter a number to encrypt "))
+# asks the user to enter a number encrypt 
+def is_prime(num): #
     """Checks if a number is prime using trial division."""
     if num <= 1:
         return False

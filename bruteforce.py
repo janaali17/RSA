@@ -47,7 +47,7 @@ totient = (q-1) * (p-1)
 
 def bruteforce(e, totient, encrypted, message):
     for d in range(2, totient):
-        if (e * d) % to == 1: 
+        if (e * d) % tos == 1: 
             decrypted = pow(encrypted, d, n)
             if decrypted == message:
                 return d
