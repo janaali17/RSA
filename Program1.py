@@ -82,11 +82,11 @@ n, e = public_key
 n, d = private_key
 
 # Encrypt the message
-c = pow(message, e, n)
+c =pow(message, e, n)
 
 # Decrypt the message
 M = pow(c, d, n)
 
 print("\nEncrypted message:", c)
 print("Decrypted message:", M)
-
+print(n)
