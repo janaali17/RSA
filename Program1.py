@@ -84,13 +84,10 @@ def RSA_k(x):
 
 # Generate RSA keys
 public_key, private_key = RSA_k(x)
-print("Public key:", public_key)
-print("Private key:", private_key)
+print("Public key:", public_key) # print "public key: " then the output of public key
+print("Private key:", private_key) # print "private key: " then the output of private key
 
-# Test encryption and decryption
-# Message to be encrypted
-
-(n, e) = public_key
+(n, e) = public_key 
 (n, d) = private_key
 
 c =pow(message, e, n) 

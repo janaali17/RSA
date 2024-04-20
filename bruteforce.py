@@ -19,7 +19,7 @@ def is_prime(num):
         i += 6
     return True
 
-def get_random_prime(bit_length):
+def random_prime(bit_length):
     """Generates a random prime number of a specified bit length."""
     while True:
         # Generate a random number within the desired bit length
@@ -32,8 +32,8 @@ def get_random_prime(bit_length):
         if is_prime(num):
             return num
         
-encrypt = int(input("please enter the encrypted text"))
-decrypt = int(input("please enter the decrypted text "))
+encrypt = int(input("\nplease enter the encrypted text"))
+decrypt = int(input("\nplease enter the decrypted text "))
 p = int(input("please enter p "))
 q = int(input("please enter q "))
 n = int(input("please enter n "))
