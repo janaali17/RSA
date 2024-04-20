@@ -1,17 +1,17 @@
 import math # so that python can understand any mathmatical equation
 import random # for generating random integrs
 import time # figures out time taken to excute the code
-import Program1 # 
+import mainprogram # extracting functions from a different file
 
 
-def is_prime(num):
-    """Checks if a number is prime using trial division."""
-    if num <= 1:
-        return False
-    if num <= 3:
-        return True
-    if num % 2 == 0 or num % 3 == 0:
-        return False
+def is_prime(num): # creating a function named "is_prime" to checks if a number is prime using trial division
+    if num <= 1: # creating a conditional statement that checks if the num is less than or equal to 1
+        return False # if the above condition is true then return false
+    if num <= 3: # creating a conditional statement that checks if the num is less than or equal to 3
+        return True # if the above condition is true then return true
+    if num % 2 == 0 or num % 3 == 0: 
+        # creating a conditional statement that checks if num modulus 2 is equal to 0 or num modulus 3 is equal to 0
+        return False # if the above condition is true then return false
     i = 5
     while i * i <= num:
         if num % i == 0 or num % (i + 2) == 0:
@@ -20,7 +20,7 @@ def is_prime(num):
     return True
 
 def random_prime(bit_length):
-    """Generates a random prime number of a specified bit length."""
+    # creating a function named "get_random_prime" to generates a random prime number of a specified bit length
     while True:
         # Generate a random number within the desired bit length
         num = random.getrandbits(bit_length)
