@@ -1,7 +1,8 @@
 import math
 import random
 
-x= int(input("would you like 8-bits or 16-bits output"))
+x= int(input("would you like 8-bits or 16-bits output "))
+message= int(input("please enter a message to encrypt "))
 def is_prime(num):
     """Checks if a number is prime using trial division."""
     if num <= 1:
@@ -75,12 +76,13 @@ print("Public key:", public_key)
 print("Private key:", private_key)
 
 # Test encryption and decryption
-m = 11  # Message to be encrypted
+# Message to be encrypted
+
 n, e = public_key
 n, d = private_key
 
 # Encrypt the message
-c = pow(m, e, n)
+c = pow(message, e, n)
 
 # Decrypt the message
 M = pow(c, d, n)
