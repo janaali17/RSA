@@ -20,60 +20,59 @@ def is_prime(num): #creating a function named "is_prime" to checks if a number i
         i += 6
     return True
 
-def get_random_prime(x): #creating a function named "get_random_prime" to generates a random prime number of a specified bit length
+def random_prime(x): 
+    # creating a function named "get_random_prime" to generates a random prime number of a specified bit length
 
-    while True: #
-        # Generate a random number within the desired bit length
+    while True: # creating a while loop to generate a random number within the desired bit length
         num = random.getrandbits(x)
-        # Make sure the number is odd and has the desired bit length
-        num |= 1  # Ensure the number is odd
-        num |= (1 << (x - 1))  # Ensure the number has the correct bit length
+        # make sure the number is odd and has the desired bit length
+        num |= 1  # ensure the number is odd
+        num |= (1 << (x - 1))  # ensure the number has the correct bit length
         
-        # Check if the number is prime
-        if is_prime(num):
-            return num
-def extended_gcd(a, b):
-    """Extended Euclidean algorithm to find the gcd of a and b and coefficients x and y."""
-    if a == 0:
-        return b, 0, 1
-    else:
+        # check if the number is prime
+        if is_prime(num): # creating 
+            return num # returns the output of num
+def extended_gcd(a, b): 
+    # creating a function named "extended_gcd" to find the gcd of a and b and coefficients x and y
+    if a == 0: # condition to check if a is equal to 0
+        return b, 0, 1 # if the above condition is true then print b, 0, 1
+    else: # otherwise if it is false
         gcd, x1, y1 = extended_gcd(b % a, a)
         x = y1 - (b // a) * x1
         y = x1
-        return gcd, x, y
+        return gcd, x, y # print out gcd, x, y
 
-def rsa_key_generation(x):
-    """Generates RSA public and private keys."""
-    # Generate prime numbers p and q
-    if x == 8:
-        p = get_random_prime(8)
-        q = get_random_prime(8)
-    elif x == 16:
-        p = get_random_prime(16)
-        q = get_random_prime(16)
-    else: 
-        exit()
+def RSA_k(x):
+    # creating a function named "RSA_k" to generates RSA public and private keys
+    # generate prime numbers p and q
+    if x == 8: # condition to check if x is equal to 8
+        p = random_prime(8)  
+        q = random_prime(8)
+    elif x == 16: # otherwise if x is equal to 16
+        p = random_prime(16)
+        q = random_prime(16)
+    else: # otherwise 
+        exit() # if both are not true exit
     
-    # Compute n and euler's totient function (eul)
-    n = p * q
-    eul = (p - 1) * (q - 1)
+    # compute n and euler's totient function
+    n = p * q #euler's function (rule)
+    eul = (p - 1) * (q - 1) # rule 
     
-    # Choose a public exponent e
-    e = 65537  # Common choice for e
+    # choose a public e (exponent)
+    e = 65537  # common choice for e
     
-    # Ensure e is coprime to eul
+    # ensure e is Co-prime to euler totient
     gcd, x, y = extended_gcd(e, eul)
     
-    while gcd != 1:
-        e = random.randint(2, eul - 1)
+    while gcd != 1: # creating while loo[ to check is gcd is not equal to 1]
+        e = random.randint(2, eul - 1) 
         gcd, x, y = extended_gcd(e, eul)
     
-    # Calculate the private exponent d
-    d = x % eul
-    if d < 0:
-        d += eul
+   
+    d = x % eul # calculating d which is x modulus eul
+    if d < 0: # condition if d is less than 0  
+        d += eul # d is equal to d plus eul
     
-    # Return public and private keys
     public_key = (n, e)
     private_key = (n, d)
     print("p: " , p)
@@ -84,7 +83,7 @@ def rsa_key_generation(x):
     return public_key, private_key
 
 # Generate RSA keys
-public_key, private_key = rsa_key_generation(x)
+public_key, private_key = RSA_k(x)
 print("Public key:", public_key)
 print("Private key:", private_key)
 

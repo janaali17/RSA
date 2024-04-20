@@ -46,11 +46,11 @@ seconds_length = time.time()
 totient = (q-1) * (p-1)
 
 def bruteforce(e, totient, encrypted, message):
-    for d in range(2, totient):
-        if (e * d) % tos == 1: 
-            decrypted = pow(encrypted, d, n)
+    for i in range(2, totient):
+        if (e * i) % tos == 1: 
+            decrypted = pow(encrypted, i, n)
             if decrypted == message:
-                return d
+                return i
     return None
 
 bruteforce2 = bruteforce(e,totient,encrypt,decrypt)
