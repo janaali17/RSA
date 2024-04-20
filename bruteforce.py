@@ -1,6 +1,8 @@
-import math
+import math 
 import random
 import time
+import Program1
+
 
 def is_prime(num):
     """Checks if a number is prime using trial division."""
@@ -29,28 +31,31 @@ def get_random_prime(bit_length):
         # Check if the number is prime
         if is_prime(num):
             return num
-
+        
+encrypt = int(input("please enter a text to encrypt "))
+decrypt = int(input("please enter a text to decrypt "))
 p = int(input("please enter p "))
 q = int(input("please enter q "))
 n = int(input("please enter n "))
 e = int(input("please enter e "))
-encrypt = input("please enter a text to encrypt")
-decrypt = int(input("please enter a text to decrypt"))
+
 # bits = int(input("how many bits do u want 8-bits or 16-bits"))
 
 seconds_length = time.time()
 
-totient = (p-1)*(q-1)
-def bruteforce(e,totient,encrypt,decrypt):
-    for i in range(2, totient):
-        if(e * i) % totient == 1:
-            decrypted = pow(encrypt, i, n)
-            if decrypted == decrypt:
-                return i
+totient = (q-1) * (p-1)
+
+def bruteforce(e, totient, encrypted, message):
+    for d in range(2, totient):
+        if (e * d) % to == 1: 
+            decrypted = pow(encrypted, d, n)
+            if decrypted == message:
+                return d
     return None
 
 bruteforce2 = bruteforce(e,totient,encrypt,decrypt)
 print("the private key is ", bruteforce2)
 
 final_time = time.time() - seconds_length
-print(f"The time taken: {final_tme:.15f} seconds")
+final_time *= 1000
+print(f"The time taken: {final_time:.15f} milliseconds")

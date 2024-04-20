@@ -1,8 +1,8 @@
 import math
 import random
 
-x = int(input("what would you like your input length to be? 8-bits or 16-bits "))
-message= input("please enter a message to encrypt ")
+x = int(input("\nwhat would you like your input length to be? 8-bits or 16-bits "))
+message= int(input("please enter a message to encrypt "))
 def is_prime(num):
     """Checks if a number is prime using trial division."""
     if num <= 1:
@@ -100,4 +100,3 @@ n, d = private_key
 
 # print("\nEncrypted message:", c)
 # print("Decrypted message:", M)
-print("n =", n)
