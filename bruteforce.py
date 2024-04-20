@@ -1,6 +1,6 @@
-import math 
-import random
-import time
+import math # so that python can understand any mathmatical equation
+import random # for generating random integrs
+import time # 
 import Program1
 
 
