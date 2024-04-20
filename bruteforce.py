@@ -34,12 +34,11 @@ p = int(input("please enter p "))
 q = int(input("please enter q "))
 n = int(input("please enter n "))
 e = int(input("please enter e "))
-# encrypt = int(input("please enter a text to encrypt")) 
-encrypt = input("please enter a text to encrypt")
-decrypt = input("please enter a text to decrypt")
+encrypt = int(input("please enter a text to encrypt")) 
+decrypt = int(input("please enter a text to decrypt"))
 # bits = int(input("how many bits do u want 8-bits or 16-bits"))
 
-seconds_lenghth = time.time()
+seconds_length = time.time()
 
 totient = (p-1)*(q-1)
 def bruteforce(e,totient,encrypt,decrypt):
