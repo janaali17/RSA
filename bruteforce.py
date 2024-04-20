@@ -44,4 +44,10 @@ totient = (p-1)*(q-1)
 def bruteforce(e,totient,encrypt,decrypt):
     for i in range(2, totient):
         if(e * i) % totient == 1:
-            decrypted = pow()
+            decrypted = pow(encrypt, i, n)
+            if decrypted == decrypt:
+                return i
+    return None
+
+bruteforce2 = bruteforce(e,totient,encrypt,decrypt)
+print("the private key is ", bruteforce2)
