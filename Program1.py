@@ -73,14 +73,14 @@ def RSA_k(x):
     if d < 0: # condition if d is less than 0  
         d += eul # d is equal to d plus eul
     
-    public_key = (n, e)
-    private_key = (n, d)
-    print("p: " , p)
-    print("q: " , q)
-    print("n: ", n)
-    print("e: ", e)
-    print("d: ", d)
-    return public_key, private_key
+    public_key = (n, e) # public key is n and e 
+    private_key = (n, d) # private key is n and d
+    print("p: " , p) # print "p: " then the output of p
+    print("q: " , q) # print "q: " then the output of q
+    print("n: ", n) # print "n: " then the output of n
+    print("e: ", e) # print "e: " then the output of e
+    print("d: ", d) # print "d: " then the output of d
+    return public_key, private_key # 
 
 # Generate RSA keys
 public_key, private_key = RSA_k(x)
@@ -90,14 +90,12 @@ print("Private key:", private_key)
 # Test encryption and decryption
 # Message to be encrypted
 
-n, e = public_key
-n, d = private_key
+(n, e) = public_key
+(n, d) = private_key
 
-# Encrypt the message
-# c =pow(message, e, n)
+c =pow(message, e, n) 
 
-# Decrypt the message
-# M = pow(c, d, n)
+M = pow(c, d, n)
 
-# print("\nEncrypted message:", c)
-# print("Decrypted message:", M)
+print("\nEncrypted message:", c)
+print("Decrypted message:", M)
