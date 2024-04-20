@@ -20,20 +20,22 @@ def is_prime(num): # creating a function named "is_prime" to checks if a number 
     return True
 
 def random_prime(bit_length):
-    # creating a function named "get_random_prime" to generates a random prime number of a specified bit length
+    # creating a function named "random_prime" to generates a random prime number of a specified bit length
     while True:
-        # Generate a random number within the desired bit length
+        # creating a while loop to generate a random number within the desired bit length
         num = random.getrandbits(bit_length)
         # Make sure the number is odd and has the desired bit length
-        num |= 1  # Ensure the number is odd
-        num |= (1 << (bit_length - 1))  # Ensure the number has the correct bit length
+        num |= 1  # ensure the number is odd
+        num |= (1 << (bit_length - 1))  # ensure the number has the correct bit length
         
-        # Check if the number is prime
+        # check if the number is prime
         if is_prime(num):
-            return num
+            return num # returns the output of num
         
-encrypt = int(input("\nplease enter the encrypted text"))
+encrypt = int(input("\nplease enter the encrypted text")) 
+# ask the user to enter the encrypted text
 decrypt = int(input("\nplease enter the decrypted text "))
+# ask the user to enter the decrypt a text
 p = int(input("please enter p "))
 q = int(input("please enter q "))
 n = int(input("please enter n "))
