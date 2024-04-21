@@ -32,11 +32,11 @@ def random_prime(bit_length):
         if is_prime(num):
             return num # returns the output of num
         
-encrypt = int(input("\nplease enter the encrypted text")) 
+encrypt = int(input("\nplease enter the encrypted text ")) 
 # ask the user to enter the encrypted text
-decrypt = int(input("\nplease enter the decrypted text "))
+decrypt = int(input("please enter the decrypted text "))
 # ask the user to enter the decrypt a text
-p = int(input("please enter p ")) # print "p: " then the output of p
+p = int(input("\nplease enter p ")) # print "p: " then the output of p
 q = int(input("please enter q ")) # print "q: " then the output of q
 n = int(input("please enter n ")) # print "n: " then the output of n
 e = int(input("please enter e ")) # print "e: " then the output of e
