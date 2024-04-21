@@ -21,7 +21,7 @@ def is_prime(num): #creating a function named "is_prime" to checks if a number i
             return False
         i += 6
     return True
-time_start = time.time()
+tstart = time.time() #starts the time 
 def random_prime(x): 
     # creating a function named "get_random_prime" to generates a random prime number of a specified bit length
 
@@ -96,9 +96,9 @@ print("Private key:", private_key) # print "private key: " then the output of pr
 c =pow(message, e, n) 
 
 M = pow(c, d, n)
-time_final = time.time() - time_start
-time_final*=1000
+Ftime = time.time() - tstart
+Ftime *= 1000
 print("\nEncrypted message:", c)
 print("Decrypted message:", M)
-print(f"Factorization took: {time_final} milliseconds")
+print(f"Factorization took: {Ftime} milliseconds")
 
