@@ -31,7 +31,7 @@ def random_prime(bit_length):
         if is_prime(num):
             return num # returns the output of num
         
-encrypt = int(input("\nplease enter the encrypted text ")) 
+encrypted = int(input("\nplease enter the encrypted text ")) 
 # ask the user to enter the encrypted text
 decrypt = int(input("please enter the decrypted text "))
 # ask the user to enter the decrypt a text
@@ -52,9 +52,9 @@ def bruteforce(e, totient, encrypted, message):
                 return i
     return None
 
-bruteforce2 = bruteforce(e,totient,encrypt,decrypt)
+bruteforce2 = bruteforce(e,totient,encrypted,decrypt)
 print("the private key is ", bruteforce2)
 
-final_time = time.time() - seconds_length
-final_time *= 1000
-print(f"The time taken: {final_time:.15f} milliseconds")
+ftime = time.time() - seconds_length
+ftime *= 1000
+print(f"The time taken: {ftime:.10f} milliseconds")

@@ -1,7 +1,7 @@
 import math # so that python can understand any mathmatical equation
 import time # figures out time taken to excute the code
 import random # for generating random integrs
-import mainprogram # extracting functions from a different file
+
 
 x = int(input("\nwhat would you like your input length to be? 8-bits or 16-bits ")) 
 # takes input from the user that asks for the length in bits
@@ -16,11 +16,11 @@ def is_prime(num): #creating a function named "is_prime" to checks if a number i
     #creating a conditional statement that checks if num modulus 2 is equal to 0 or num modulus 3 is equal to 0 
         return False # if the above condition is true then return false
     i = 5 
-    while i * i <= num:
-        if num % i == 0 or num % (i + 2) == 0:
-            return False
-        i += 6
-    return True
+    while i * i <= num: # creating a while loop that multplies i by i and checks if the product is less than or equal to the num
+        if num % i == 0 or num % (i + 2) == 0: # if num mod 5 or num mod 7 is equal to 0 
+            return False # then prints false
+        i += 6 # add 6 to i which is 5 
+    return True 
 tstart = time.time() #starts the time 
 def random_prime(x): 
     # creating a function named "get_random_prime" to generates a random prime number of a specified bit length
@@ -100,5 +100,5 @@ Ftime = time.time() - tstart
 Ftime *= 1000
 print("\nEncrypted message:", c)
 print("Decrypted message:", M)
-print(f"Factorization took: {Ftime} milliseconds")
+print(f"Factorization took: {Ftime:.10f} milliseconds")
 
