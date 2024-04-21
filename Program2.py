@@ -7,3 +7,4 @@ def facrtorization(n,e):
     factorize.append(2)
     n= n//2
     for i in range(3,int())
+    
