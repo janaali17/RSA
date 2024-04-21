@@ -3,7 +3,6 @@ import random # for generating random integrs
 import time # figures out time taken to excute the code
 import mainprogram # extracting functions from a different file
 
-
 def is_prime(num): # creating a function named "is_prime" to checks if a number is prime using trial division
     if num <= 1: # creating a conditional statement that checks if the num is less than or equal to 1
         return False # if the above condition is true then return false
