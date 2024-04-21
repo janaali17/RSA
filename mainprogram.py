@@ -12,7 +12,7 @@ def is_prime(num): #creating a function named "is_prime" to checks if a number i
         return True #if the above condition is true then return true 
     if num % 2 == 0 or num % 3 == 0: 
     #creating a conditional statement that checks if num modulus 2 is equal to 0 or num modulus 3 is equal to 0 
-        return False #if the above condition is true then return false
+        return False # if the above condition is true then return false
     i = 5 
     while i * i <= num:
         if num % i == 0 or num % (i + 2) == 0:

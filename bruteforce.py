@@ -36,12 +36,10 @@ encrypt = int(input("\nplease enter the encrypted text"))
 # ask the user to enter the encrypted text
 decrypt = int(input("\nplease enter the decrypted text "))
 # ask the user to enter the decrypt a text
-p = int(input("please enter p "))
-q = int(input("please enter q "))
-n = int(input("please enter n "))
-e = int(input("please enter e "))
-
-# bits = int(input("how many bits do u want 8-bits or 16-bits"))
+p = int(input("please enter p ")) # print "p: " then the output of p
+q = int(input("please enter q ")) # print "q: " then the output of q
+n = int(input("please enter n ")) # print "n: " then the output of n
+e = int(input("please enter e ")) # print "e: " then the output of e
 
 seconds_length = time.time()
 
